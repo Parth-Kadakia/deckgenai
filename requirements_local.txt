@@ -1,0 +1,13 @@
+# Requirements for local card generation using Z-Image-Turbo
+
+# Core dependencies
+torch>=2.0.0
+diffusers>=0.31.0
+transformers>=4.35.0
+accelerate>=0.25.0
+
+# Image processing
+pillow>=10.0.0
+
+# Optional: For better performance
+# flash-attn>=2.0.0  # Uncomment if you want Flash Attention support

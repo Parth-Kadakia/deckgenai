@@ -24,6 +24,10 @@ Thumbs.db
 # Batch output files
 batch_output/results.jsonl
 
+# Local generation outputs
+card_images_local/
+test_output/
+
 # Temporary files
 *.tmp
 temp.py
