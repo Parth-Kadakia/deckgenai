@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated card images (optional - uncomment if you don't want to track images)
+# card_images/
+
+# Batch output files
+batch_output/results.jsonl
+
+# Temporary files
+*.tmp
+temp.py
