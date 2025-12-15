@@ -46,22 +46,27 @@ Generate custom playing card artwork using AI. Supports both cloud-based (Google
 
 1. **Install dependencies:**
    ```bash
-   pip install -r requirements_local.txt
+   .venv/bin/pip install -r requirements_local.txt
+   # Or: python3 -m pip install -r requirements_local.txt
    ```
 
 2. **Test your setup:**
    ```bash
-   python test_setup.py
+   .venv/bin/python test_setup_mac.py
    ```
 
 3. **Generate a single card:**
    ```bash
-   python generate_local.py --single-card Ace Hearts
+   .venv/bin/python generate_local_mac.py --single-card Ace Hearts
    ```
 
-4. **Generate full deck:**
+4. **Generate full deck (all 55 cards):**
    ```bash
-   python generate_local.py --full-deck
+   # Option 1: Simple full deck generation
+   .venv/bin/python generate_local_mac.py --full-deck
+   
+   # Option 2: Batch generation with progress tracking (recommended)
+   .venv/bin/python batch_generate.py
    ```
 
 ## Project Structure
@@ -69,15 +74,20 @@ Generate custom playing card artwork using AI. Supports both cloud-based (Google
 ```
 carddeckgen/
 ├── app.py                    # Cloud generation (Google Gemini)
-├── generate_local.py         # Local generation (Z-Image-Turbo)
-├── test_setup.py            # Setup verification script
+├── generate_local.py         # Local generation (Z-Image-Turbo, CUDA)
+├── generate_local_mac.py     # Local generation (Mac compatible)
+├── batch_generate.py         # Batch generation with progress tracking
+├── test_setup.py            # Setup verification script (CUDA)
+├── test_setup_mac.py        # Setup verification script (Mac)
 ├── requirements_local.txt   # Local generation dependencies
 ├── README.md                # This file
 ├── README_LOCAL.md          # Detailed local generation guide
+├── MAC_SETUP.md             # Mac-specific setup guide
 ├── deck.jsonl               # Deck configuration
 ├── playing-cards-batch.jsonl # Batch processing config
 ├── card_images/             # Generated cards (cloud)
 ├── card_images_local/       # Generated cards (local)
+│   └── batch_results.json   # Batch generation results
 └── batch_output/            # Batch processing results
 ```
 
@@ -87,19 +97,22 @@ carddeckgen/
 
 ```bash
 # Single card
-python generate_local.py --single-card King Spades
+.venv/bin/python generate_local_mac.py --single-card King Spades
 
 # Card back
-python generate_local.py --card-back
+.venv/bin/python generate_local_mac.py --card-back
 
-# Full deck with custom theme
-python generate_local.py --full-deck \
+# Batch: Full deck (52 cards + 2 jokers + 1 back = 55 total)
+.venv/bin/python batch_generate.py
+
+# Batch: Custom theme
+.venv/bin/python batch_generate.py \
   --theme "Cyberpunk" \
   --technique "neon digital art" \
   --background "dark holographic"
 
-# With performance optimizations
-python generate_local.py --full-deck --flash-attention --compile
+# Simple full deck generation
+.venv/bin/python generate_local_mac.py --full-deck
 ```
 
 ### Customization
