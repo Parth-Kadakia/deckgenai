@@ -145,15 +145,17 @@ Generated cards follow this naming pattern:
 
 ## Performance Comparison
 
-| Metric | Local (GPU) | Cloud (API) |
-|--------|-------------|-------------|
-| Speed per card | ~2-3 seconds | ~30-60 seconds |
-| Quality | High | Very High |
-| Cost | Free* | $$ per card |
-| Setup complexity | Medium | Easy |
-| Requirements | GPU required | API key only |
+| Method | Time per Card | Full Deck (55) | Quality | Cost | Setup |
+|--------|---------------|----------------|---------|------|-------|
+| CUDA GPU | ~2-3 seconds | ~3-5 minutes | High | Free* | Medium |
+| Mac MPS | ~20-25 minutes | ~18-23 hours | High | Free* | Easy |
+| Google Colab GPU | ~2-3 seconds | ~3-5 minutes | High | Free** | Easy |
+| Cloud API | ~30-60 seconds | ~30-60 minutes | Excellent | $2-5 | Easy |
 
-*After initial GPU purchase
+*After hardware purchase  
+**Free tier with usage limits
+
+⚠️ **Mac Users:** Local generation is very slow. See [SPEED_OPTIMIZATION.md](SPEED_OPTIMIZATION.md) for faster alternatives.
 
 ## Tips
 
